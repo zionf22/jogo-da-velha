@@ -1,4 +1,4 @@
-import React from 'react' 
+import React,{useState} from 'react'
 import './JogoDaVelha.css'
 import circle_icon from '../Assets/O-Letter.png'
 import x_icon from '../Assets/x.png'
@@ -8,10 +8,11 @@ let data = ["","","","","","","","",""];
 const JogoDaVelha = () => {
 
     let [count,setCount] = useState(0);
-    let [lock, setlock] = useState(false)
+    let [lock,setlock] = useState(false);
 
-    const toggle = (w,num) => {
-        if (lcok) {
+
+    const toggle = (e,num) => {
+        if (lock) {
             return 0;
         }
         if (count%2===0){
@@ -30,17 +31,17 @@ const JogoDaVelha = () => {
         <div classname="container">
             <h1 classname="title"> Jogo Da Velha Em <span>React</span></h1>
             <div classname= "board">
-                <div classname= "row1">
+                <div classname= "row">
                     <div classname= "slots" onClick={(e)=>{toggle(e,0)}}></div>
                     <div classname= "slots" onClick={(e)=>{toggle(e,1)}}></div>
                     <div classname= "slots" onClick={(e)=>{toggle(e,2)}}></div>
                 </div>
-                <div classname= "row2">
+                <div classname= "row">
                     <div classname= "slots" onClick={(e)=>{toggle(e,3)}}></div>
                     <div classname= "slots" onClick={(e)=>{toggle(e,4)}}></div>
                     <div classname= "slots" onClick={(e)=>{toggle(e,5)}}></div>
                 </div>
-                <div classname= 'row3'>
+                <div classname= 'row'>
                     <div classname= 'slots' onClick={(e)=>{toggle(e,6)}}></div>
                     <div classname= 'slots' onClick={(e)=>{toggle(e,7)}}></div>
                     <div classname= 'slots' onClick={(e)=>{toggle(e,8)}}></div>
