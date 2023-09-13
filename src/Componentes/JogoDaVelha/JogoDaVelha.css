@@ -42,3 +42,7 @@ align-items: center;
     display: flex;
     margin: auto;
 }
+
+.slots img{
+    margin: 50px;
+}
